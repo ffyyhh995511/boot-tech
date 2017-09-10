@@ -16,22 +16,22 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		
-		<!-- 生成实体类的包名和位置，这里配置将生成的实体类放在org.boot.tech.model这个包下 -->
-		<javaModelGenerator targetPackage="org\boot\tech\model"
+		<!-- 生成实体类的包名和位置，这里配置将生成的实体类放在org.boot.tech.core.model这个包下 -->
+		<javaModelGenerator targetPackage="org.boot.tech.core.model"
 			targetProject="D:\Workspaces\springboot\boot-tech\boot-tech-core\src\main\java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 		
-		<!-- 生成的SQL映射文件包名和位置，这里配置将生成的SQL映射文件放在me.gacl.mapping这个包下 -->
+		<!-- 生成的SQL映射文件包名和位置，这里配置将生成的SQL映射文件放在mybatis.mapper这个包下 -->
 		<sqlMapGenerator targetPackage="mybatis.mapper"
-			targetProject="D:\Workspaces\springboot\spirngdemo2\src\main\resources">
+			targetProject="D:\Workspaces\springboot\boot-tech\boot-tech-service\src\main\resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		
-		<!-- 生成DAO的包名和位置，这里配置将生成的dao类放在me.gacl.dao这个包下 -->
-		<javaClientGenerator type="XMLMAPPER" targetPackage="org.fyh.spirngdemo2.mapper" 
-			targetProject="D:\Workspaces\springboot\spirngdemo2\src\main\java">
+		<!-- 生成DAO的包名和位置，这里配置将生成的dao类放在org.boot.tech.mapper这个包下 -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="org.boot.tech.mapper" 
+			targetProject="D:\Workspaces\springboot\boot-tech\boot-tech-service\src\main\java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		

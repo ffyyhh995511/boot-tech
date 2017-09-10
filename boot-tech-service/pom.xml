@@ -99,7 +99,13 @@
             <groupId>com.alibaba</groupId>  
             <artifactId>druid</artifactId>  
             <version>1.0.25</version>  
-        </dependency>  
+        </dependency>
+        
+		<dependency>
+			<groupId>org.fyh</groupId>
+			<artifactId>boot-tech-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
 	</dependencies>
   
