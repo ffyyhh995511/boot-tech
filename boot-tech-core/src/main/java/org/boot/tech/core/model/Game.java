@@ -1,9 +1,15 @@
 package org.boot.tech.core.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Game {
-    private String id;
+public class Game implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private String id;
 
     private String name;
 
