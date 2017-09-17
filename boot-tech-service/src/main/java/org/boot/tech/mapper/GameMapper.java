@@ -1,5 +1,7 @@
 package org.boot.tech.mapper;
 
+import java.util.List;
+
 import org.boot.tech.core.model.Game;
 
 public interface GameMapper {
@@ -14,4 +16,6 @@ public interface GameMapper {
     int updateByPrimaryKeySelective(Game record);
 
     int updateByPrimaryKey(Game record);
+
+	List<Game> queryAll();
 }
