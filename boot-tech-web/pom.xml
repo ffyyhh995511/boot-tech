@@ -24,7 +24,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.fyh</groupId>
-			<artifactId>boot-tech-service</artifactId>
+			<artifactId>boot-tech-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

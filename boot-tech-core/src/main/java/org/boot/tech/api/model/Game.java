@@ -1,4 +1,4 @@
-package org.boot.tech.core.model;
+package org.boot.tech.api.model;
 
 import java.io.Serializable;
 import java.util.Date;

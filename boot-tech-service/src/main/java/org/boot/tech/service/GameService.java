@@ -4,7 +4,7 @@ import java.util.Date;
 
 import javax.annotation.Resource;
 
-import org.boot.tech.core.model.Game;
+import org.boot.tech.api.model.Game;
 import org.boot.tech.mapper.GameMapper;
 import org.boot.tech.util.UUIDUtil;
 import org.springframework.stereotype.Service;

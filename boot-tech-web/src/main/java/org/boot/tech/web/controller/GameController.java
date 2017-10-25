@@ -6,7 +6,7 @@ package org.boot.tech.web.controller;
 
 import javax.annotation.Resource;
 
-import org.boot.tech.core.model.Game;
+import org.boot.tech.api.model.Game;
 import org.boot.tech.service.GameService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

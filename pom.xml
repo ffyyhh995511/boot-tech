@@ -19,17 +19,12 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	<java.version>1.8</java.version>
   </properties>
 
-  <dependencies>
-  
-  </dependencies>
-  
+  <version>1.0.0.RELEASE</version>
   <modules>
   	<module>boot-tech-core</module>
   	<module>boot-tech-service</module>
   	<module>boot-tech-web</module>
   </modules>
-  <version>1.0.0.RELEASE</version>
 </project>

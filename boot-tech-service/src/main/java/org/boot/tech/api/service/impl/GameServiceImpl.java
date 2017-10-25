@@ -1,12 +1,12 @@
-package org.boot.tech.service.impl;
+package org.boot.tech.api.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.boot.tech.core.model.Game;
-import org.boot.tech.core.service.GameService;
+import org.boot.tech.api.model.Game;
+import org.boot.tech.api.service.GameService;
 import org.boot.tech.mapper.GameMapper;
 
 @com.alibaba.dubbo.config.annotation.Service

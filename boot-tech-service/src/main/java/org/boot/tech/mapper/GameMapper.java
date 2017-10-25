@@ -2,7 +2,7 @@ package org.boot.tech.mapper;
 
 import java.util.List;
 
-import org.boot.tech.core.model.Game;
+import org.boot.tech.api.model.Game;
 
 public interface GameMapper {
     int deleteByPrimaryKey(String id);

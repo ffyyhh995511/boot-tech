@@ -8,7 +8,7 @@
     <version>1.0.0.RELEASE</version>
   </parent>
   
-  <artifactId>boot-tech-service</artifactId>
+  <artifactId>boot-tech-core</artifactId>
   <name>boot-tech-service</name>
   <url>http://maven.apache.org</url>
   
@@ -106,7 +106,7 @@
         
 		<dependency>
 			<groupId>org.fyh</groupId>
-			<artifactId>boot-tech-core</artifactId>
+			<artifactId>boot-tech-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		

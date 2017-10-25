@@ -7,7 +7,7 @@
     <artifactId>boot-tech</artifactId>
     <version>1.0.0.RELEASE</version>
   </parent>
-  <artifactId>boot-tech-core</artifactId>
+  <artifactId>boot-tech-api</artifactId>
   <name>boot-tech-core</name>
   <url>http://maven.apache.org</url>
   <properties>
