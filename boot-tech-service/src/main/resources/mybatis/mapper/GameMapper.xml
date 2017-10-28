@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.boot.tech.mapper.GameMapper">
-  <resultMap id="BaseResultMap" type="org.boot.tech.core.model.Game">
+  <resultMap id="BaseResultMap" type="org.boot.tech.api.model.Game">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="company" jdbcType="VARCHAR" property="company" />
@@ -21,13 +21,13 @@
     delete from game
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="org.boot.tech.core.model.Game">
+  <insert id="insert" parameterType="org.boot.tech.api.model.Game">
     insert into game (id, name, company, 
       create_date, type)
     values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{company,jdbcType=VARCHAR}, 
       #{createDate,jdbcType=TIMESTAMP}, #{type,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="org.boot.tech.core.model.Game">
+  <insert id="insertSelective" parameterType="org.boot.tech.api.model.Game">
     insert into game
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="org.boot.tech.core.model.Game">
+  <update id="updateByPrimaryKeySelective" parameterType="org.boot.tech.api.model.Game">
     update game
     <set>
       <if test="name != null">
@@ -82,7 +82,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="org.boot.tech.core.model.Game">
+  <update id="updateByPrimaryKey" parameterType="org.boot.tech.api.model.Game">
     update game
     set name = #{name,jdbcType=VARCHAR},
       company = #{company,jdbcType=VARCHAR},
