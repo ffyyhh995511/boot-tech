@@ -20,4 +20,9 @@ public class GameServiceImpl implements GameService{
 		return gameMapper.queryAll();
 	}
 
+	@Override
+	public int remoteSave(Game game) {
+		return gameMapper.insert(game);
+	}
+
 }

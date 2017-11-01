@@ -17,3 +17,8 @@
 /boot-tech-web/target
 /boot-tech-web/.classpath
 /boot-tech-web/.project
+
+/boot-tech-client/.settings
+/boot-tech-client/target
+/boot-tech-client/.classpath
+/boot-tech-client/.project
