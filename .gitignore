@@ -8,10 +8,10 @@
 /boot-tech-core/.classpath
 /boot-tech-core/.project
 
-/boot-tech-service/.settings
-/boot-tech-service/target
-/boot-tech-service/.classpath
-/boot-tech-service/.project
+/boot-tech-api/.settings
+/boot-tech-api/target
+/boot-tech-api/.classpath
+/boot-tech-api/.project
 
 /boot-tech-web/.settings
 /boot-tech-web/target
