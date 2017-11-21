@@ -1,12 +1,12 @@
-package org.boot.tech.service;
+package org.boot.tech.core.service;
 
 import java.util.Date;
 
 import javax.annotation.Resource;
 
 import org.boot.tech.api.model.Game;
-import org.boot.tech.mapper.GameMapper;
-import org.boot.tech.util.UUIDUtil;
+import org.boot.tech.core.mapper.GameMapper;
+import org.boot.tech.core.util.UUIDUtil;
 import org.springframework.stereotype.Service;
 
 @Service

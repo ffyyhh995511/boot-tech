@@ -1,4 +1,4 @@
-package org.boot.tech.configuration;
+package org.boot.tech.core.configuration;
 
 import java.sql.SQLException;
 

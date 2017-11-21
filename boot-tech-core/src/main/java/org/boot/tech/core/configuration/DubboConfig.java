@@ -1,4 +1,4 @@
-package org.boot.tech.configuration;
+package org.boot.tech.core.configuration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;  
   

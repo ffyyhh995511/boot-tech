@@ -1,4 +1,4 @@
-package org.boot.tech.mapper;
+package org.boot.tech.core.mapper;
 
 import java.util.List;
 

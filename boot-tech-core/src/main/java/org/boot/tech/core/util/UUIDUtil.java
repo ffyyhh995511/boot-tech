@@ -1,4 +1,4 @@
-package org.boot.tech.util;
+package org.boot.tech.core.util;
 
 import java.util.UUID;
 
