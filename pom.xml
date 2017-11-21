@@ -23,9 +23,9 @@
 
   <version>1.0.0.RELEASE</version>
   <modules>
+  	<module>boot-tech-api</module>
+  	<module>boot-tech-client</module>
   	<module>boot-tech-core</module>
-  	<module>boot-tech-service</module>
   	<module>boot-tech-web</module>
-    <module>boot-tech-client</module>
   </modules>
 </project>

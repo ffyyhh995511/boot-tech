@@ -7,14 +7,133 @@
     <artifactId>boot-tech</artifactId>
     <version>1.0.0.RELEASE</version>
   </parent>
-  <artifactId>boot-tech-api</artifactId>
+  <artifactId>boot-tech-core</artifactId>
   <name>boot-tech-core</name>
   <url>http://maven.apache.org</url>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	<java.version>1.8</java.version>
+	<com.alibaba.dubbo.version>2.5.3</com.alibaba.dubbo.version>  
+    <org.apache.zookeeper.version>3.4.6</org.apache.zookeeper.version>  
+    <com.github.sgroschupf.zkclient.version>0.1</com.github.sgroschupf.zkclient.version>
   </properties>
+  
+  
+  
   <dependencies>
-  </dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		
+		<dependency>  
+            <groupId>org.springframework.boot</groupId>  
+            <artifactId>spring-boot-starter-data-jpa</artifactId>  
+        </dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+		<dependency>
+		    <groupId>commons-collections</groupId>
+		    <artifactId>commons-collections</artifactId>
+		    </dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.13</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+		<dependency>
+		    <groupId>commons-beanutils</groupId>
+		    <artifactId>commons-beanutils</artifactId>
+		</dependency>
+		
+		<!-- mybatis分页插件 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>4.1.6</version>
+		</dependency>
+        
+        <dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+        
+        <dependency>  
+            <groupId>com.alibaba</groupId>  
+            <artifactId>druid</artifactId>  
+            <version>1.0.25</version>  
+        </dependency>
+        
+		<dependency>
+			<groupId>org.fyh</groupId>
+			<artifactId>boot-tech-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<!-- dubbo -->  
+        <dependency>  
+            <groupId>com.alibaba</groupId>  
+            <artifactId>dubbo</artifactId>  
+            <exclusions>  
+                <exclusion>  
+                    <groupId>org.springframework</groupId>  
+                    <artifactId>spring</artifactId>  
+                </exclusion>  
+            </exclusions>  
+            <version>${com.alibaba.dubbo.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.apache.zookeeper</groupId>  
+            <artifactId>zookeeper</artifactId>  
+            <version>${org.apache.zookeeper.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>com.github.sgroschupf</groupId>  
+            <artifactId>zkclient</artifactId>  
+            <version>${com.github.sgroschupf.zkclient.version}</version>  
+        </dependency>  
+
+	</dependencies>
+  
 </project>
