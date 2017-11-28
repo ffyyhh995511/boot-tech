@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -20,10 +19,6 @@ import com.alibaba.fastjson.JSON;
 public class BaseController implements HandlerInterceptor{
 	
 	protected static final Logger logger = LoggerFactory.getLogger(BaseController.class);
-	
-	public static final int RESPONSE_FAIL = 0;//失败
-	public static final int RESPONSE_SUCC = 1;//成功
-	public static final int RESPONSE_AUTH = 2;//权限
 	
 	private static final ThreadLocal<HttpServletRequest> REQUEST = new ThreadLocal<HttpServletRequest>();
 	private static final ThreadLocal<HttpServletResponse> RESPONSE = new ThreadLocal<HttpServletResponse>();
@@ -61,7 +56,6 @@ public class BaseController implements HandlerInterceptor{
 	public HttpServletRequest getRequest() {
 		return REQUEST.get();
 	}
-
 	
 	/**
 	 * 获取Response方法
@@ -70,7 +64,6 @@ public class BaseController implements HandlerInterceptor{
 	public HttpServletResponse getResponse() {
 		return RESPONSE.get();
 	}
-	
 	
 	/**
 	 * 打印参数
@@ -114,80 +107,6 @@ public class BaseController implements HandlerInterceptor{
 	 */
 	public HttpSession getSession() {
 		return getRequest().getSession();
-	}
-	
-	/**
-	 * 参数错误
-	 * @param msg
-	 * @return
-	 */
-	public Map<String, Object> responseParamFail(String msg) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("status", RESPONSE_FAIL);
-		if(StringUtils.isBlank(msg)){
-			map.put("msg", "Parameter error");
-		}else{
-			map.put("msg", msg);
-		}
-		return map;
-	}
-	
-	/**
-	 * 失败返回
-	 * @param msg
-	 * @return
-	 */
-	public Map<String, Object> responseFail(String msg) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("status", RESPONSE_FAIL);
-		map.put("msg", msg);
-		return map;
-	}
-	
-	/**
-	 * 成功返回
-	 * @param msg
-	 * @param object
-	 * @return
-	 */
-	public Map<String, Object> responseSuccess(String msg, Object object) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("status", RESPONSE_SUCC);
-		map.put("msg", msg);
-		map.put("data", object);
-		return map;
-	}
-	
-	/**
-	 * 权限相关
-	 * @param msg
-	 * @param object
-	 * @return
-	 */
-	public Map<String, Object> responseAuth(String msg, Object object) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("status", RESPONSE_AUTH);
-		map.put("msg", msg);
-		map.put("data", object);
-		return map;
-	}
-	
-	public Map<String, Object> responseSuccess(Object object) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("status", RESPONSE_SUCC);
-		map.put("data", object);
-		return map;
-	}
-	
-	public Map<String, Object> responseSuccess(String msg) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("status", RESPONSE_SUCC);
-		map.put("msg", msg);
-		return map;
-	}
-	
-	public Map<String, Object> responseSuccess() {
-		return responseSuccess(null, null);
 	}
 	
 	/**

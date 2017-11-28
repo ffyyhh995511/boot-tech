@@ -6,7 +6,10 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * Created by linrufeng on 2017/3/28.
+ * 
+ * @author fangyunhe
+ *
+ * 2017年9月13日 下午2:34:21
  */
 @Data
 public class Response<T> implements Serializable {
@@ -15,109 +18,93 @@ public class Response<T> implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String status;      //请求状态 1 成功 0失败
-    private String msg;         //请求信息
+	
+	private Integer code;      
+	
+    private String msg;
+    
     private T data;
 
-    private Response(T data, String status, String msg){
+    public Response(T data, Integer code, String msg){
         this.data = data;
-        this.status = status;
+        this.code = code;
         this.msg = msg;
     }
-
+    
     /**
      * 返回成功结果
-     * @param data
-     * @param <T>
-     * @return
-     */
-    public static <T> Response<T> successResponse(T data) {
-        return new Response<T>(data, Code.codeData.REQUESTSUCCESS.code, Code.msg.REQUESTSUCCESS.desc);
-    }
-
-    /**
-     * 返回成功结果
-     * @param data
-     * @param <T>
-     * @return
-     */
-    public static <T> Response<T> successResponse(String msg, T data) {
-        return new Response<T>(data, Code.codeData.REQUESTSUCCESS.code, String.format(msg, Code.msg.USER_DEFINED.desc));
-    }
-
-    /**
-     *
      * @param <T>
      * @return
      */
     public static <T> Response<T> successResponse() {
-        return new Response<T>(null, Code.codeData.REQUESTSUCCESS.code, Code.msg.REQUESTSUCCESS.desc);
+        return new Response<T>(null, ResponseMsg.STATUS001.getCode(), ResponseMsg.STATUS001.getMsg());
     }
-
+    
+    public static <T> Response<T> successResponse(T data) {
+        return new Response<T>(data, ResponseMsg.STATUS001.getCode(), ResponseMsg.STATUS001.getMsg());
+    }
+    
+    public static <T> Response<T> successResponse(String msg) {
+        return new Response<T>(null, ResponseMsg.STATUS001.getCode(), msg);
+    }
+    
+    public static <T> Response<T> successResponse(T data,String msg) {
+        return new Response<T>(data, ResponseMsg.STATUS001.getCode(), msg);
+    }
+    
     /**
      * 返回失败结果
      * @param <T>
      * @return
      */
     public static <T> Response<T> failedResponse() {
-        return new Response<T>(null, Code.codeData.REQUESTFAILED.code, Code.msg.REQUESTFAILED.desc);
+        return new Response<T>(null, ResponseMsg.STATUS002.getCode(), ResponseMsg.STATUS002.getMsg());
     }
-
-    /**
-     * 返回失败结果
-     * @param <T>
-     * @return
-     */
-    public static <T> Response<T> failedResponse(Code.codeData codeData, Code.msg msg) {
-        return new Response<T>(null, codeData.code, msg.desc);
+    
+    public static <T> Response<T> failedResponse(T data) {
+        return new Response<T>(data, ResponseMsg.STATUS002.getCode(), ResponseMsg.STATUS002.getMsg());
     }
-
-    /**
-     * 返回失败结果
-     * @param <T>
-     * @return
-     */
+    
     public static <T> Response<T> failedResponse(String msg) {
-        return new Response<T>(null, Code.codeData.USER_DEFINED.code, String.format(msg, Code.msg.USER_DEFINED.desc));
+        return new Response<T>(null, ResponseMsg.STATUS002.getCode(), msg);
     }
-
+    
     /**
-     * 返回失败结果
-     * @param code
-     * @param msg
-     * @param <T>
-     * @return
-     */
-    public static <T> Response<T> failedResponse(String code, String msg) {
-        return new Response<T>(null, code, msg);
-    }
-
-    /**
-     * 返回异常结果
-     * @param <T>
-     * @return
-     */
-    public static <T> Response<T> systemErrorResponse() {
-        return new Response<T>(null, Code.codeData.SYSTEMERROR.code, Code.msg.SYSTEMERROR.desc);
-    }
-
-    /**
-     * 返回异常结果
-     * @param <T>
-     * @return
-     */
-    public static <T> Response<T> systemErrorResponse(String msg) {
-        return new Response<T>(null, Code.codeData.USER_DEFINED.code, String.format(msg, Code.msg.USER_DEFINED.desc));
-    }
-    /**
-     * 返回失败结果
-     * @param code
-     * @param msg
+     * 返回参数校验失败结果
      * @param data
+     * @return
+     */
+    public static <T> Response<T> paramsCheckFailResponse() {
+        return new Response<T>(null, ResponseMsg.STATUS003.getCode(), ResponseMsg.STATUS003.getMsg());
+    }
+    
+    public static <T> Response<T> paramsCheckFailResponse(T data) {
+        return new Response<T>(data, ResponseMsg.STATUS003.getCode(), ResponseMsg.STATUS003.getMsg());
+    }
+    
+    public static <T> Response<T> paramsCheckFailResponse(String msg) {
+        return new Response<T>(null, ResponseMsg.STATUS003.getCode(), msg);
+    }
+    
+    /**
+     * 返回权限失败结果
      * @param <T>
      * @return
      */
-    public static <T> Response<T> failedDataResponse(T data,String code, String msg) {
-        return new Response<T>(data, code, msg);
+    public static <T> Response<T> AuthResponse() {
+        return new Response<T>(null, ResponseMsg.STATUS004.getCode(), ResponseMsg.STATUS004.getMsg());
     }
+    
+    public static <T> Response<T> AuthResponse(T data) {
+        return new Response<T>(data, ResponseMsg.STATUS004.getCode(), ResponseMsg.STATUS004.getMsg());
+    }
+    
+    public static <T> Response<T> AuthResponse(String msg) {
+        return new Response<T>(null, ResponseMsg.STATUS004.getCode(), msg);
+    }
+    
+    public static <T> Response<T> AuthResponse(T data,String msg) {
+        return new Response<T>(data, ResponseMsg.STATUS004.getCode(), msg);
+    }
+    
 }
