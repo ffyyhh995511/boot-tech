@@ -107,4 +107,11 @@ public class Response<T> implements Serializable {
         return new Response<T>(data, ResponseMsg.STATUS004.getCode(), msg);
     }
     
+    /**
+     * 内部错误
+     * @return
+     */
+    public static <T> Response<T> interiorErrorResponse() {
+        return new Response<T>(null, ResponseMsg.STATUS005.getCode(), ResponseMsg.STATUS005.getMsg());
+    }
 }

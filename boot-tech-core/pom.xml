@@ -132,7 +132,13 @@
             <groupId>com.github.sgroschupf</groupId>  
             <artifactId>zkclient</artifactId>  
             <version>${com.github.sgroschupf.zkclient.version}</version>  
-        </dependency>  
+        </dependency>
+        
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
 
 	</dependencies>
   
